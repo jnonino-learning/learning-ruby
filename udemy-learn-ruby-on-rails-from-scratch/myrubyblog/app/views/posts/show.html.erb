@@ -1,1 +1,5 @@
-<h1>Show Post</h1>
+<h1> <%=@post.title %> </h1>
+
+<small> <%= @post.created_at.strftime("%d-%m-%y") %> </small>
+
+<p> <%= @post.body %> </p>

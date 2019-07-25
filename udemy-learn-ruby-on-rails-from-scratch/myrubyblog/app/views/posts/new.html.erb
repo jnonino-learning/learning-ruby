@@ -15,8 +15,6 @@
     <%= form.select :category_id, @categories.collect {|category| [category.name, category.id]}, {:include_blank => "Select One"} %><br />
   </p>
 
-  <p>
-    <%= form.submit "Add Post" %>
-  </p>
+  <button><h2><%= form.submit "Add Post" %></h2></button>
 
 <% end %>

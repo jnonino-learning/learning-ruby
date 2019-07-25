@@ -3,3 +3,5 @@
 <small> <%= @post.created_at.strftime("%d-%m-%y") %> </small>
 
 <p> <%= @post.body %> </p>
+
+<button><h2><%= link_to "Edit post", edit_post_path %></h2></button>

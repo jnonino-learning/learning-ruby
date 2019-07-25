@@ -4,4 +4,6 @@
 
 <p> <%= @post.body %> </p>
 
-<button><h2><%= link_to "Edit post", edit_post_path %></h2></button>
+<%= link_to "Edit post", edit_post_path %>
+
+<%= link_to "Delete post", @post, :confirm => "Are you sure you want to delete the post?", :method => :delete %>

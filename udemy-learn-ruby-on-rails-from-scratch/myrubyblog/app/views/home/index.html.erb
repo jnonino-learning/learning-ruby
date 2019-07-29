@@ -1,6 +1,10 @@
-<h1>Welcome to my Ruby Blog</h1>
-<p>This is some infor about my Ruby Blog website</p>
-
 <% @posts.each do |post| %>
-  <%= post.title %>
+  <div class="post">
+    <h2 class="title"><%= link_to post.title,post %></h2>
+    <div class="entry"><%= post.body %></div>
+    <div class="byline">
+      <p class="meta">May 07, 2012 Posted by <a href="#">Someone</a></p>
+      <p class="links"><a href="post.html">Read More</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="b0x w">Comments</a></p>
+    </div>
+  </div>
 <% end %>

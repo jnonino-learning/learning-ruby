@@ -1,22 +1,25 @@
 <h1>Edit Post</h1>
-<%= form_for @post do |form| %>
-  <p>
-    <%= form.label :title %><br />
-    <%= form.text_field :title %><br />
-  </p>
+<div class="post">
+  <%= form_for @post do |form| %>
+    <p>
+      <%= form.label :title %><br />
+      <%= form.text_field :title %><br />
+    </p>
 
-  <p>
-    <%= form.label :body %><br />
-    <%= form.text_area :body %><br />
-  </p>
+    <p>
+      <%= form.label :body %><br />
+      <%= form.text_area :body %><br />
+    </p>
 
-  <p>
-    <%= form.label :category_id %><br />
-    <%= form.select :category_id, @categories.collect {|category| [category.name, category.id]}, {:include_blank => "Select One"} %><br />
-  </p>
+    <p>
+      <%= form.label :category_id %><br />
+      <%= form.select :category_id, all_categories.collect {|category| [category.name, category.id]}, {:include_blank => "Select One"} %><br />
+    </p>
 
-  <button><h2><%= form.submit "Update Post" %></h2></button>
+    <button><h2><%= form.submit "Update Post" %></h2></button>
 
-<% end %>
+  <% end %>
 
-<button><h2><%= link_to "Cancel", post_path %></h2></button>
+  <button><h2><%= link_to "Cancel", post_path %></h2></button>
+
+</div>

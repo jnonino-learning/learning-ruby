@@ -1,22 +1,12 @@
-<h1>Posts</h1>
-
 <%= link_to "Add new post", new_post_path %>
 
-<table>
-  <thead>  
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= link_to(post.title,post) %></td>
-        <td><%= post.body %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %><td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %><td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% all_posts.each do |post| %>
+  <div class="post">
+    <h2 class="title"><%= link_to post.title,post %></h2>
+    <div class="entry"><%= post.body %></div>
+    <div class="byline">
+      <p class="meta">May 07, 2012 Posted by <a href="#">Someone</a></p>
+      <p class="links"><a href="post.html">Read More</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="b0x w">Comments</a></p>
+    </div>
+  </div>
+<% end %>
